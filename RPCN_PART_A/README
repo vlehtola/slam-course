@@ -1,0 +1,58 @@
+This is the readme file to setup the docker for RPCN Assignment 1 
+
+
+1. Copy your collected datasets to this folder.
+
+2. Edit line 31 in the "dockerfile" with your dataset files.
+
+3. Install docker 
+    https://docs.docker.com/engine/install/ubuntu/
+
+4. Check if docker is installed corectly with 
+    docker --version
+
+5. Build Docker Image 
+    docker build . -t rpcn  [rpcn is the docker name can be modified]
+
+6. Once successful you can run docker 
+    docker run -it rpcn bash 
+
+7. Check if you have you datasets(.bag) in 
+    cd backpack/bagfiles/
+
+8. To playback rosbag use 
+    a. Source setup - 
+	source /opt/ros/noetic/setup.bash
+    b. Startup ROS - 
+	roscore
+    c. New terminal inside Docker Container (check the commands in note below)
+    d. go to backpack/bagfiles/
+	cd backpack/bagfiles/
+    e. Play the recorded datat- 
+	rosbag play <xx.bag> --clock
+    f. New terminal inside Docker Container
+    g. look at rostopics
+            rostopic list
+            rostopic echo <topicname>
+    h. You can see the data from the rostopic specified. 
+
+9. Extract data from the ros topics, for example:
+  rostopic echo /imu/data > ascii_file.txt
+
+10. Structure the data as you see best, for example:
+rostopic echo /imu/acceleration | grep x > ascii_x_acc.txt
+
+11. Interpolate a trajectory using the IMU data and calibration data. 
+
+
+NOTE: 
+a: To run a second terminal in the same container 
+    1. get container id using
+        docker ps
+    2. connect docker in new terminal with
+        docker exec -it <id>
+b. Always use source command in every termial before runing ros commands.
+    source /opt/ros/noetic/setup.bash
+
+
+

@@ -1,0 +1,3 @@
+[submodule "RPCN_PART_B/cartographer_ros"]
+	path = RPCN_PART_B/cartographer_ros
+	url = https://github.com/cartographer-project/cartographer_ros
