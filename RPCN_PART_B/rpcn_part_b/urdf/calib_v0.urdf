@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<robot name="indoor_sensor">
+	
+<link name="base_link">
+  <inertial>
+    <mass value="0.001"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0 0 0"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+
+<link name="imu_link">
+  <inertial>
+    <mass value="0.001"/>
+    <origin xyz="0 0 0"/>
+    <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.0001"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.3 0.2 0.1"/>
+    </geometry>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.3 0.2 0.1"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="s0_link">
+  <inertial>
+    <mass value="0.01" />
+    <origin xyz="0 0 0"/>
+    <inertia ixx="0.001"  ixy="0.0"  ixz="0.0"   iyy="0.001"  iyz="0.0"  izz="0.001" />
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </visual>
+  <collision>
+<!--    <origin xyz="0 0 0.1"/> -->
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </collision>
+</link>
+
+<link name="s1_link">
+  <inertial>
+    <mass value="0.01" />
+    <origin xyz="0 0 0"/>
+    <inertia ixx="0.001"  ixy="0.0"  ixz="0.0"   iyy="0.001"  iyz="0.0"  izz="0.001" />
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </visual>
+  <collision>
+<!--    <origin xyz="0 0 0.1"/> -->
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </collision>
+</link>
+
+<link name="s2_link">
+  <inertial>
+    <mass value="0.01" />
+    <origin xyz="0 0 0"/>
+    <inertia ixx="0.001"  ixy="0.0"  ixz="0.0"   iyy="0.001"  iyz="0.0"  izz="0.001" />
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0"/>
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </visual>
+  <collision>
+<!--    <origin xyz="0 0 0.1"/> -->
+    <geometry>
+      <box size="0.05 0.05 0.1" />
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_imu_joint" type="floating">
+  <origin xyz="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+</joint>
+
+<joint name="imu_s0_joint" type="fixed">
+  <origin xyz="0 0 0.08" rpy="0 0 -1.5708"/>
+  <parent link="imu_link"/>
+  <child link="s0_link"/>
+</joint>
+
+<joint name="imu_s1_joint" type="fixed">
+  <origin xyz="-0.322627 -0.140189 -0.204478" rpy="-0.763033 -0.909551 1.907222"/>
+  <parent link="s0_link"/>
+  <child link="s1_link"/>
+</joint>
+
+<joint name="imu_s2_joint" type="fixed">
+  <origin xyz="0.312896 -0.135085 -0.188828" rpy="0.135985 0.966562 -1.012791"/>
+  <parent link="s0_link"/>
+  <child link="s2_link"/>
+</joint> 
+
+</robot>

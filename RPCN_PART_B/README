@@ -1,0 +1,55 @@
+This is the main readme file for assignment part B, Author --(b.udugama@utwente.nl, v.v.lehtola@utwente.nl)
+
+These instructions were tested on the ubuntu 20.04 LTS version with\
+Docker version 20.10.12, build 20.10.12-0ubuntu2~20.04.1
+
+INSTRUCTIONS TO BUILD THE PACKAGE
+
+1. Please copy your bag files to the "bagfiles" folder provided with this package
+
+2. Open a new terminal inside the RPCN_PART_B package & Run the following command
+	sudo docker build -f Dockerfile -t rpcn_partb .
+	
+3. Invoke your docker image with the following commands
+	xhost +local:docker
+	sudo docker run --name assignment_part_b -it --privileged -e DISPLAY=$DISPLAY --net=host -v /tmp/.X11-unix/:/tmp/.X11-Unix  rpcn_partb  bash
+
+	Notes :
+	a. use --name option to name your docker container so that you would refer to it easily in the future
+	b. xhost +local:docker and --privileged {} : options are used to allow docker to access host machine's Xserver for GUI applications which you will need to visualise SLAM with RVIZ (if you are facing issues with GUI applications with docker please double check these options)
+
+
+4. Invoke another terminal with the same session
+	xhost +local:docker
+	docker exec -it assignment_part_b bash
+
+Additional Note:
+	if you exit the first session and want to start it in a new terminal, please try
+		docker start assignment_part_b
+		docker attach assignment_part_b
+
+6. Run the cartographer with your bag file
+	cd /home/rpcn/catkin_ws
+	source "/opt/ros/${ROS_DISTRO}/setup.bash"
+	source "/opt/cartographer_ros/setup.bash"
+	source devel/setup.bash
+	roslaunch rpcn_part_b rpcn_part_b.launch bag_filename:=/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/{your_bag_file_name}
+
+	Note: You must source ROS setup files on new terminals to access ROS commands
+
+7. You must understand the cartographer's configuration to complete your assignment, specified in the my_robot.lua file
+	
+	use your preferred text editor to view and edit the config file, which is placed inside the following location
+	/home/rpcn/catkin_ws/src/rpcn_part_b/configuration_files/my_robot.lua
+
+
+8. Following questions need to be answered to complete part B of your RPCN assignment:
+    
+	Edit the my_robot.lua file to enhance the performance of the cartographer SLAM algorithm.
+
+	Discuss and plot results:
+		See the assignment description document.
+	
+	
+
+
