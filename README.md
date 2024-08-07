@@ -12,7 +12,9 @@ intended as groupwork but may be done individually as well.
 
 **Groupwork C**: coordinate transformations, registering data from other lidars
 
-Requirements: Ubuntu Linux 20.04, docker, (ROS, will be inside a docker container)
+##Requirements
+Ubuntu Linux 20.04, docker, (ROS, will be inside a docker container)
 
-Note: rosbags are available from
+##Note
+rosbags are available from
 https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF
