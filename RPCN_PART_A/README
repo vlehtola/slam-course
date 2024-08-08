@@ -11,11 +11,11 @@ This is the readme file to setup the docker for RPCN Assignment 1
 4. Check if docker is installed corectly with 
     docker --version
 
-5. Build Docker Image [use sudo or make a docker group]
-    docker build . -t rpcn  [rpcn is the docker name can be modified]
+5. Build Docker Image [note: use sudo or make a docker group]
+    sudo docker build . -t rpcn  [rpcn is the docker image name that can be modified]
 
 6. Once successful you can run docker 
-    docker run -it rpcn bash 
+    sudo docker run -it rpcn bash 
 
 7. Check if you have you datasets(.bag) in 
     cd backpack/bagfiles/
