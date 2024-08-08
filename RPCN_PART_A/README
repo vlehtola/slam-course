@@ -11,7 +11,7 @@ This is the readme file to setup the docker for RPCN Assignment 1
 4. Check if docker is installed corectly with 
     docker --version
 
-5. Build Docker Image 
+5. Build Docker Image [use sudo or make a docker group]
     docker build . -t rpcn  [rpcn is the docker name can be modified]
 
 6. Once successful you can run docker 
