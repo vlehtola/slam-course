@@ -5,7 +5,9 @@ Docker version 20.10.12, build 20.10.12-0ubuntu2~20.04.1
 
 INSTRUCTIONS TO BUILD THE PACKAGE
 
-1. Please copy your bag files to the "bagfiles" folder provided with this package
+1. Please copy your bag files to the "bagfiles" folder provided with this package and run
+	git submodule init
+	git submodule update
 
 2. Open a new terminal inside the RPCN_PART_B package & Run the following command
 	sudo docker build -f Dockerfile -t rpcn_partb .
