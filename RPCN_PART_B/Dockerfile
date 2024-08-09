@@ -71,8 +71,7 @@ RUN rm -rf cartographer_ros catkin_ws || true
 COPY README /home/rpcn/
 COPY part_b_config.sh / 
 COPY rpcn_part_b /rpcn_part_b
-#Note: do not copy bagfiles, mount the directory instead to docker
-#COPY bagfiles /bagfiles
+#Note: do not copy bagfiles, mount the directory instead to docker when running the image
 RUN chmod +x /part_b_config.sh
 RUN  /part_b_config.sh
 WORKDIR /home/rpcn
