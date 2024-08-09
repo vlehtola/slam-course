@@ -28,4 +28,4 @@ RUN mkdir -p /home/rpcn/backpack/bagfiles/
 RUN git clone https://github.com/cartographer-project/cartographer
 
 # Dataset files
-ADD test1.bag test2.bag /home/rpcn/backpack/bagfiles/   
+ADD test1.bag /home/rpcn/backpack/bagfiles/   
