@@ -21,6 +21,7 @@
 
   <node name="rviz" pkg="rviz" type="rviz" required="true"
       args="-d $(find rpcn_part_b)/configuration_files/demo_2d.rviz" />
+  <!-- For troubleshooting: check that the horizontal lidar is selected below. -->
   <node name="playbag" pkg="rosbag" type="play"
-      args="/scan2:=scan /imu/data:=imu /tf_static:=/tf_ignore --clock $(arg bag_filename)" />
+      args="/scan0:=scan /imu/data:=imu /tf_static:=/tf_ignore --clock $(arg bag_filename)" />
 </launch>
