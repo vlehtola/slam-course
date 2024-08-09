@@ -14,12 +14,15 @@ INSTRUCTIONS TO BUILD THE PACKAGE
 	
 3. Invoke your docker image with the following commands
 	xhost +local:docker
-	sudo docker run --name assignment_part_b -it --privileged -e DISPLAY=$DISPLAY --net=host -v /tmp/.X11-unix/:/tmp/.X11-Unix  rpcn_partb  bash
+	sudo docker run --name assignment_part_b -it --privileged -e DISPLAY=$DISPLAY --net=host -v /tmp/.X11-unix/:/tmp/.X11-Unix -v ~/slam-course/RPCN_PART_B/bagfiles:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/   rpcn_partb  bash
 
-	Notes :
+
+	Notes:
 	a. use --name option to name your docker container so that you would refer to it easily in the future
 	b. xhost +local:docker and --privileged {} : options are used to allow docker to access host machine's Xserver for GUI applications which you will need to visualise SLAM with RVIZ (if you are facing issues with GUI applications with docker please double check these options)
-
+	c. the bagfiles directory is mounted into the docker, so that there is no need to create a duplicate of the bagfile, saving disk space
+	d. -v ~/rpcn_groupwork/RPCN_PART_B/bagfiles:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/ 
+	e. in a special case of running the docker on a remote machine, check out run.sh
 
 4. Invoke another terminal with the same session
 	xhost +local:docker
