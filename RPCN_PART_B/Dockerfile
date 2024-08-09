@@ -65,7 +65,7 @@ COPY cartographer_ros/scripts/ros_entrypoint.sh /
 RUN rm -rf /var/lib/apt/lists/*
 # A BTRFS bug may prevent us from cleaning up these directories.
 # https://btrfs.wiki.kernel.org/index.php/Problem_FAQ#I_cannot_delete_an_empty_directory
-RUN rm -rf cartographer_ros catkin_ws || true
+# RUN rm -rf cartographer_ros catkin_ws || true
 
 #This section will copy and build the ros enviornment for the RPCN assignment part B
 COPY README /home/rpcn/
