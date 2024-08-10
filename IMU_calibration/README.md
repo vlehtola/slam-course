@@ -18,6 +18,7 @@ Then go to the MT Manager folder and open and read MT Manager documentation.
 ## Report
 Table 1: calculated bias and scale factor error of acceleration and angular rate from the following equations introduced at the lecture 
 
+![IMU calibration equations](https://github.com/vlehtola/slam-course/blob/main/IMU_calibration/eqs_imu_calib.PNG "Equations")
 
 Calculate bias offset and scale factor error for each run. In addition, estimate run-to-run bias and scale factor instability. Can we estimate other error sources? Is yes, please do so.
 Briefly discuss the results. Recommend calibration parameters for b_a,S_a,b_g,S_g that should be used for the IMU (=bias offset and scale factor error). For example, highlight these in the table and explain the
