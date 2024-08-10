@@ -1,7 +1,7 @@
 # Lidar-inertial sensor fusion in 2D
 v.v.lehtola@utwente.nl
 
-Use the supplied docker file to build a ready virtual environment with all the needed libraries and packages.  Documentation about scan matching 2D lidar data and using supplementing IMU data can be found at [cartographer wiki](http://wiki.ros.org/cartographer) 
+Use the supplied docker file to build a ready virtual environment with all the needed libraries and packages. See README file. Documentation about scan matching 2D lidar data and using supplementing IMU data can be found at [cartographer wiki](http://wiki.ros.org/cartographer) 
 and [ros wiki](http://wiki.ros.org/laser_scan_matcher) .
 
 ## Report
