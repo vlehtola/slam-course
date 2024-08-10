@@ -10,7 +10,7 @@ intended as groupwork but may be done individually as well.
 
 **Groupwork B**: cartographer SLAM for one 2D hokuyo lidar
 
-**Groupwork C**: coordinate transformations, registering data from other lidars
+**Groupwork C**: coordinate transformations, registering data from other lidars (may be run as a thought exercise)
 
 **IMU calibration**: Part of groupwork A (may be considered optional).
 
