@@ -12,6 +12,8 @@ intended as groupwork but may be done individually as well.
 
 **Groupwork C**: coordinate transformations, registering data from other lidars
 
+**IMU calibration**: Part of groupwork A (may be considered optional).
+
 ## Requirements
 Ubuntu Linux 20.04, docker, (ROS, will be inside a docker container)
 
