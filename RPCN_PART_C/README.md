@@ -1,5 +1,5 @@
 
-This assignment is under development.
+Use this assignment as a thought exercise. (Implementing 3D registration from 2D slam solution is prone to be erroneous.)
 
 # Multi-sensor fusion
 This assignment is about multi-sensor fusion. The backpack has 3 hokuyo lidars.
