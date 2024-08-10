@@ -56,5 +56,5 @@ H_(f_N)^(f_1 )=〖H_(f_2)^(f_1 ) H〗_(f_3)^(f_2 )…H_(f_N)^(f_(N-1) ).
 
 The result is a 3D point cloud. Please take a snapshot of the point cloud and include it into your report. An easy way to do this is to install cloudCompare (www.cloudcompare.org ) and open the point cloud therein for visualization. Discuss briefly how you could detect objects such as doors from the data (those are big objects). Discuss briefly how the assumption that we have a 2D trajectory affects the results and the quality of the point cloud.
 
-(Optional for 2 extra points in case you missed some points from previous assignments; you may use one extra page): Convert the point cloud into a 3D occupancy grid (see the updated lecture slides on RPCN applications). Show a figure. What is a suitable voxel size? Give approximate estimations of the dimensions of the test field. How high is the ceiling? How precise is your estimate? Discuss briefly what robotic applications could benefit from lidar-inertial perception systems.
+(Optional extra): Convert the point cloud into a 3D occupancy grid. Show a figure. What is a suitable voxel size? Give approximate estimations of the dimensions of the test field. How high is the ceiling? How precise is your estimate? Discuss briefly what robotic applications could benefit from lidar-inertial perception systems.
 
