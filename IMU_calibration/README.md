@@ -5,7 +5,7 @@ v.v.lehtola@utwente.nl
 The objective of this practical is the rudimentary IMU calibration. We study accelerometers and gyroscopes and their bias and scale factor errors.
 
 ## Experiment
-The experiment shall be done together in the class as follows. Align the IMU in the way that one of its axes is aligned with gravity. Record the IMU acceleration and angular rate of this axis for a while. This allows for averaging the acceleration and angular rate over time. 
+The experiment shall be done together in the class as follows. Align the IMU in the way that one of its axes is aligned with gravity. Record the IMU acceleration and angular rate of this axis for a while, e.g. 1 min. This allows for averaging the acceleration and angular rate over time. 
 Then turn the IMU upside down in the way that the gravity is in the opposite direction. Record another time series and average the acceleration and angular rate. 
 Repeat this procedure for two other axes (=up and down for all three axes).
 
