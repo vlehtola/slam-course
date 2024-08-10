@@ -12,7 +12,7 @@ Repeat this procedure for two other axes (=up and down for all three axes).
 Now turn off and turn on the IMU and repeat the whole procedure multiple times. Keep a measurement notebook on how the experiment went.
 
 ## Data preparation
-This step may be done jointly in class. To open the proprietary data file, either use mtb_to_text_python310 package or download the “MT Software Suite” from: https://www.movella.com/support/software-documentation  and install it.
+This step may be done jointly in class. To open the proprietary data file from e.g. XSens MTi-300, either use mtb_to_text_python310 package or download the “MT Software Suite” from: https://www.movella.com/support/software-documentation  and install it.
 Then go to the MT Manager folder and open and read MT Manager documentation. 
 
 ## Report
