@@ -44,7 +44,7 @@ for topic, msg, t in Bag('demo_part_b.bag'):
         scan0[msg.header.seq] = x,y
 ```
 
-Next, register the data into the body frame b with a 4x4 homogeneous transformation matrix H_(s_1)^b. Here, the body frame b is equal to the sensor frame s2. You may assume that all rotations are 90 degrees.
+Next, register the data into the body frame b with a 4x4 homogeneous transformation matrix H_(s_1)^b. Here, the body frame b is equal to the sensor frame s2. You may assume that all rotations are 90 degrees. The translation between horizontal sensor and the sensor measured in the image is xyz = (-0.06, 0.26, -0.12), where xaxis is pointing forward and z up.
 
 At this point, you should have all the data in the body frame. But the body frame is moving and we need to register all the data into the world frame, which in this case is the first scan frame (or pose). 
 
