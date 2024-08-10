@@ -12,6 +12,10 @@ The multi-lidar fusion can be done basically in two fashions:
 - fuse the lidar data before cartographer
 - use the trajectory from the cartographer to register the data of other lidars
 
+# Fuse the lidar data before cartographer
+
+Cartographer provides one input ros topic called 'scan' in the 2D SLAM mode. How could the data from two topics (=two lidars) be merged into one?
+
 # Registering the data of other lidars
 
 Registration of lidar data and analysis of a 3D point cloud. If horizontal lidar is s2, other lidars are s1 and s0 (check this). 
@@ -20,7 +24,7 @@ Read the data (msgs for /scan1 and /scan0) from the bag file, see the following
 
 The data is in the form of ranges, and there is also the information about the starting angle and the angles between the beams. These form a cylinder coordinate system c1 in the sensor frame. Convert these points p_c1=(r,θ,z=0) into a XYZ system in the sensor frame p_(s_1 ). Use translation t_c1^s1=(0,0,0). You can use the python code snippet below to get started.
 
-'''python
+```python
 from rosbag import Bag
 import numpy as np
 
@@ -38,7 +42,7 @@ for topic, msg, t in Bag('demo_part_b.bag'):
             y.append(i*np.cos(msg.angle_min+msg.angle_increment*index))
             index+=1
         scan0[msg.header.seq] = x,y
-'''
+```
 
 Next, register the data into the body frame b with a 4x4 homogeneous transformation matrix H_(s_1)^b. Here, the body frame b is equal to the sensor frame s2. You may assume that all rotations are 90 degrees.
 
