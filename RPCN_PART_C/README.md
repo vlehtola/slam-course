@@ -4,7 +4,7 @@ This assignment is under development.
 # Multi-sensor fusion
 This assignment is about multi-sensor fusion. The backpack has 3 hokuyo lidars.
 
-![Tape measures from the multi-sensor backpack](https://github.com/vlehtola/slam-course/blob/main/hokuyo%20backpack.jpeg "Multi-sensor backpack")
+![Tape measures from the multi-sensor backpack](https://github.com/vlehtola/slam-course/blob/main/hokuyo%20backpack.jpg "Multi-sensor backpack")
 
 Dockerfile is in the part B folder.
 
