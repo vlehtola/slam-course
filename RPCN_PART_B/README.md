@@ -22,5 +22,3 @@ Figure 2: Plot the following trajectories in one figure and add to your report:
 -	Lidar-imu fusion trajectory (see the my_robot.lua file options to enable IMU data usage)
 
 Discuss the results briefly.
-
-![image](https://github.com/user-attachments/assets/4298c4a3-e345-463d-9ece-020676a6959a)![image](https://github.com/user-attachments/assets/fa51c77f-ad52-4488-99a9-f6687cc378ad)
