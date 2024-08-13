@@ -14,7 +14,7 @@ INSTRUCTIONS TO BUILD THE PACKAGE
 	
 3. Invoke your docker image with the following commands
 	xhost +local:docker
-	sudo docker run --name assignment_part_b -it --privileged -e DISPLAY=$DISPLAY --net=host -v /tmp/.X11-unix/:/tmp/.X11-Unix -v ~/slam-course/RPCN_PART_B/bagfiles:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/   rpcn_partb  bash
+	sudo docker run --name assignment_part_b -it --privileged -e DISPLAY=$DISPLAY --net=host -v /tmp/.X11-unix/:/tmp/.X11-unix -v ~/slam-course/RPCN_PART_B/bagfiles:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/   rpcn_partb  bash
 
 
 	Notes:
