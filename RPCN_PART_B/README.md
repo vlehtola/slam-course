@@ -1,12 +1,16 @@
 # Lidar-inertial sensor fusion in 2D
 v.v.lehtola@utwente.nl
 
-Use the supplied docker file to build a ready virtual environment with all the needed libraries and packages. See README file. Documentation about scan matching 2D lidar data and using supplementing IMU data can be found at [cartographer wiki](http://wiki.ros.org/cartographer) 
+Use the supplied docker file to build a ready virtual environment with all the needed libraries and packages. 
+See README file. Documentation about scan matching 2D lidar data and using supplementing IMU data can be found 
+at [cartographer wiki](http://wiki.ros.org/cartographer) 
 and [ros wiki](http://wiki.ros.org/laser_scan_matcher) .
 
 ## Report
 
-Figure 1: Take a snapshot of the cartographer result in rviz, when the whole trajectory is visible. 	
+![SLAM output when starting the exercise](https://github.com/vlehtola/slam-course/blob/main/images/slam_start.png>
+
+Figure 1: Take a snapshot of the cartographer result in rviz, after optimization, when the whole trajectory is visible. 	
 
 Discuss in your report:
 -	What are the relations between keyframes (lidar lecture 1), poses seen in rviz, and submaps (cartographer documentation)?
