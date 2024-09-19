@@ -8,7 +8,7 @@ and [ros wiki](http://wiki.ros.org/laser_scan_matcher) .
 
 ## Report
 
-![SLAM output when starting the exercise](https://github.com/vlehtola/slam-course/blob/main/images/slam_start.png>
+![SLAM output when starting the exercise](https://github.com/vlehtola/slam-course/blob/main/images/slam_start.png)
 
 Figure 1: Take a snapshot of the cartographer result in rviz, after optimization, when the whole trajectory is visible. 	
 
