@@ -6,7 +6,7 @@ Ville Lehtola, University of Twente, v.v.lehtola@utwente.nl
 This codebase contains the three RPCN (Robot Perception, Cognition, Navigation) course exercises,
 intended as groupwork but may be done individually as well.
 
-**Groupwork A**: pedestrian dead recognition by IMU integration
+**Groupwork A**: pedestrian dead reckoning by IMU integration
 
 **Groupwork B**: cartographer SLAM for one 2D hokuyo lidar
 
