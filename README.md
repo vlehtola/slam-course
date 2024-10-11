@@ -42,19 +42,21 @@ Installing ROS is not necessary.
 git clone https://github.com/your-username/slam-course.git
 cd slam-course
 ```
-2. Get sensor data  
-**For exercise A&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the `path` to bag files would need to be readjusted)
+2. Get sensor data
+  
+	**For exercise A&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
 
-![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
+	![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
 
-**For exercise C:** We won't use the backpack data in this exercise. We will use NTU VIRAL DATASET for the given exercise.
-First, download the data [nya_01 (Collected inside the Nanyang Auditorium)](https://researchdata.ntu.edu.sg/api/access/datafile/68144) from here or directly from the website, unzip it, and place it in the `slam-course/bagfiles` folder. With following commands you can download it via linux terminal.
-            
+
+	**For exercise C:** We won't use the backpack data in this exercise. We will use NTU VIRAL DATASET for the given exercise.
+	First, download the data [nya_01 (Collected inside the Nanyang Auditorium)](https://researchdata.ntu.edu.sg/api/access/datafile/68144) from here or directly from the website, unzip 	it, and place it in the `slam-course/bagfiles` folder. You can download the rosbag via a Linux terminal with the following commands.
+	            
 		wget <bag zipfile URL>
-   		unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
-   		unzip nya_01 #To get the rosbag and related config files
+		unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
+		unzip nya_01 #To get the rosbag and related config files
      
-![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
+	![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
 
 
 4. Build the Docker Image [note: use sudo or make a docker group]
@@ -72,24 +74,24 @@ Each group exercise has a separate docker file. For any given exercise, go to th
     #### For exercise C
     ```
     cd RPCN_PART_C
-    make build  #rpcnc is the docker image name for exercise C  (make file builds the container here)
+    make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
     ```
  
 3. Start the Docker container
    
     While inside any exercise folder (e.g., RPCN_PART_A) 
-            ```
-            ./run_docker.sh (preferred)
-             ```
+     ```
+     ./run_docker.sh 
+     ```
      If you see the following outcome (or similar), you are successfully inside a docker container
      ![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
 
    	#### For exercise A 
-	a. Check if you have your datasets(.bag) in the container while inside docker container
-	           ```
+	a. Check if you have your datasets(.bag) in the container
+
 	           cd backpack/bagfiles/
 	           ls
-	           ``` 
+
 	![image](https://github.com/user-attachments/assets/3d72a93c-0fec-4f36-b609-755480f0e8b3)
 	           
 	b. To playback rosbag, you need to source ROS with the following command and start ROS
@@ -112,12 +114,12 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 	Note: `<id>` refers to the container ID shown beside the container name (e.g., here 572aa1996226)
 
      
-	d. While in a newly open container terminal (one of two newly open terminals) go to `backpack/bagfiles/` and play one of the rosbags
+	d. While in a newly open container terminal (one of two newly open terminals), go to `backpack/bagfiles/` and play one of the rosbags
 
-            cd backpack/bagfiles/
-            rosbag play <xx.bag> --clock
+           cd backpack/bagfiles/
+           rosbag play <xx.bag> --clock
    
-	e. Go to another newly open container terminal, and look for rostopics as follows
+	e. Go to another newly open container terminal and look for rostopics as follows
 
             rostopic list #Shows all the published rostopics
             rostopic echo <topicname> #shows data of specific rostopic <topicname>
@@ -128,10 +130,10 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 
      #### For exercise B
    	a. Check if you have your datasets(.bag) in the container
-	           ```
+   
 	           cd backpack/bagfiles/
 	           ls
-	           ```
+
    
 	b. Now open two new terminals and connect them to the running container as follows:
 	   
@@ -148,7 +150,7 @@ Each group exercise has a separate docker file. For any given exercise, go to th
             source devel/setup.bash
             roslaunch rpcn_part_b rpcn_part_b.launch bag_filename:=/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/{your_bag_file_name}
 
-	d. You must understand the cartographer's configuration to complete your assignment specified in the my_robot.lua file.
+	d. You'll need to understand the cartographer's configuration to complete your assignment in the my_robot.lua file.
         Use your preferred text editor to view and edit the config file, which is placed inside the following location
 	       `/home/rpcn/catkin_ws/src/rpcn_part_b/configuration_files/my_robot.lua`
    
@@ -157,13 +159,13 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 
      #### For exercise C
    
-	b. Visualize the ros topics in rviz window
+	a. Visualize the ros topics in rviz window
 
-	c. If you wish to directly interact with rostopics, go to the separate terminal and link it with `rpcnc` running container via `docker exec -it <id> bash`
+	b. If you wish to directly interact with rostopics, go to the separate terminal and link it with `rpcnc` running container via `docker exec -it <id> bash`
 
-	e. Exit the container when finished, and write `make clean` while inside folder `RPCN_PART_C` to delete the container
+	c. Exit the container when finished, and write `make clean` while inside folder `RPCN_PART_C` to delete the container
 
-	d. Refer to assignment section for more details
+	d. Refer to the assignment section for more details
 
 
 
@@ -171,3 +173,4 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 ```
 docker ps
 ```
+
