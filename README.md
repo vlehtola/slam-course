@@ -21,12 +21,13 @@ This course repository is designed to introduce students to the fundamentals of 
   * SLAM with Cartographer
 - Practical Application: This exercise allows building a 2D map of an indoor environment, which is useful in mobile robot navigation, autonomous vehicles, and drones.
 
-**Groupwork C**: Coordinate Transformations and Multi-Sensor Data Registration (Advanced, could be done as a though exercise)
+**Groupwork C**: Coordinate Transformations and Multi-Sensor Data Fusion using A-LOAM 
 - Objective: This exercise covers relatively advanced SLAM concepts, specifically registering data from multiple LIDAR sensors and performing coordinate transformations. Students will explore multi-sensor fusion and transform sensor data into a unified coordinate system.
 - Key Concepts:
   * Coordinate transformations (Euler angles, quaternions)
   * Multi-sensor fusion for improved map accuracy
   * Registering and aligning data from different sensors
+  * Improving existing methods
 - Practical Application: This exercise extends earlier SLAM implementation to multiple sensors, often common in autonomous driving, 3D mapping, and robot localization.
 
 ## Prerequisite
