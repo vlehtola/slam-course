@@ -13,4 +13,3 @@ apt-get -y install vim nano
 
 # apt-get install ros-noetic-rviz
 
-

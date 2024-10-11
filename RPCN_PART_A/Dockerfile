@@ -19,7 +19,6 @@ RUN apt-get -y install libgtkmm-2.4-1v5 libglademm-2.4-1v5 libglade2-0 libgtkgle
 RUN apt-get -y install ros-noetic-usb-cam ros-noetic-urg-node ros-noetic-xsens-mti-driver rviz
 
 # config files
-ADD README /home/rpcn/
 ADD calib.urdf vis.rviz /home/rpcn/backpack/
 
 # 2D SLAM, Google cartographer
@@ -27,5 +26,5 @@ WORKDIR /home/rpcn
 RUN mkdir -p /home/rpcn/backpack/bagfiles/
 RUN git clone https://github.com/cartographer-project/cartographer
 
-# Dataset files
-ADD test1.bag /home/rpcn/backpack/bagfiles/   
+# # Dataset files
+# ADD test1.bag /home/rpcn/backpack/bagfiles/   
