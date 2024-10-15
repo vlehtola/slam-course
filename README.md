@@ -31,10 +31,11 @@ This course repository is designed to introduce students to the fundamentals of 
 - Practical Application: This exercise extends earlier SLAM implementation to multiple sensors, often common in autonomous driving, 3D mapping, and robot localization.
 
 ## Prerequisite
- The following course repositories are recommended to run inside docker. With the help of docker, a pre-configured environment could be run without the need to install individual software dependencies, simplifying the overall process. The exercises are tested with the following versions:
+ The following course repositories are recommended to run inside docker. With the help of docker, a pre-configured environment could be run without installing individual software dependencies, simplifying the overall process. The exercises are tested with the following versions:
  * Ubuntu Linux 20.04 (expected to work with Ubuntu Linux 22.04)
  * Docker 26.0.00 (expected to work with other versions as well)
  * MESA (`conda install -c conda-forge libglu` (if using conda) OR `sudo apt-get install libgl1-mesa-glx libgl1-mesa-dri` (if using sudo env)
+ * MT Manager (For preferred OS, Refer this [link](https://www.movella.com/support/software-documentation))
 Installing ROS is not necessary.
 
 ## Setup Instructions
