@@ -1,3 +1,8 @@
+git pull
+- breakdown the content exercise into a1 and a2
+- how to add bias and scale factor
+- verify by running it
+
 # Robotic perception SLAM course
 
 Ville Lehtola, University of Twente, v.v.lehtola@utwente.nl   
@@ -36,6 +41,7 @@ This course repository is designed to introduce students to the fundamentals of 
  * Docker 26.0.00 (expected to work with other versions as well)
  * MESA (`conda install -c conda-forge libglu` (if using conda) OR `sudo apt-get install libgl1-mesa-glx libgl1-mesa-dri` (if using sudo env)
  * MT Manager (For preferred OS, Refer this [link](https://www.movella.com/support/software-documentation))
+
 Installing ROS is not necessary.
 
 ## Setup Instructions
