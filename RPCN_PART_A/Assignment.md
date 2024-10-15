@@ -12,3 +12,11 @@ Remember to calibrate the IMU first with the bias and scale factor values obtain
 
 
 (what kindof trajectory needs to be plotted? How integrate imu calib parameters?)
+
+Integrate IMU calib folder with rpcn A exercise...
+Steps:
+Calculate scale factor and biase in class
+store rosbag data in .txt or any preferable format.
+plot the results
+integrate imu bias and scale factor to store data using data_analysis.py
+plot the results
