@@ -16,12 +16,13 @@ Remember to calibrate the IMU first with the bias and scale factor values obtain
 Integrate IMU calib folder with rpcn A exercise...
 Steps:
 Part 1a
-Record the IMU data with MT Manager 2.0 in class
-Open and store in .txt file
-Utilize data_analyse python file to get average imu values
-estimate scale factor and bias via equations
+1. Record the IMU data with MT Manager 2.0 in class
+2. Open and store in .txt file
+3. Utilize data_analyse python file to get average imu values
+4. estimate scale factor and bias via equations
 Part 2b
-run rosbag and store rosbag imu data in .txt or any other preferable format.
-plot the results
-integrate imu bias and scale factor to store data using data_analysis.py
-plot the results
+1. run rosbag and store rosbag imu data in .txt or any other preferable format.
+2. plot the results
+3. integrate imu bias and scale factor to store data using data_analysis.py
+4. plot the results
+5. compare results
