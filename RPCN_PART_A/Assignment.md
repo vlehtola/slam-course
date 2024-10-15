@@ -3,12 +3,16 @@
 Calculate a trajectory by integrating the IMU data over time. Perform the IMU integration in 2D and/or 3D. See README how to access the data through docker.
 
 ## Report
-Figure: Plot the trajectory. Pay attention to the scale and to that the labels of the axes are properly shown.
+Figure#1: Plot the 2D X-Y trajectory with the recorded data (that was stored in the form of .txt via running `rosbag`). 
+
+Figure#2: Plot the 2D X-Y trajectory with the refined recorded data (that was biased and scale-corrected)
+
+**Note:** Pay attention to the plotting scale so that the labels of the axes are properly shown.
 
 Discuss: 
-Did the IMU arrive on the same place than it started from, according to the data? Estimate the magnitude of drift. If there is drift, why?
+According to the data, did the IMU arrive in the same place from where it started? Estimate the magnitude of drift. If there is drift, why?
 
-Remember to calibrate the IMU first with the bias and scale factor values obtained from the previous exercise. Mention these values, if not mentioned before. To what extent did the calibration remove the drift?
+**Note:** Remember to calibrate the IMU data first with the bias and scale factor values obtained from `exercise#A1` before plotting Figure#2. Mention these values if they have not been mentioned before. To what extent did the calibration remove the drift?
 
 
 (what kindof trajectory needs to be plotted? How integrate imu calib parameters?)
