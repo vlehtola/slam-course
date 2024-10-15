@@ -38,47 +38,47 @@ This course repository is designed to introduce students to the fundamentals of 
 Installing ROS is not necessary.
 
 ## Setup Instructions
-1. Clone the Repository
+### 1. Clone the Repository
 ```
 git clone https://github.com/your-username/slam-course.git
 cd slam-course
 ```
-2. Get sensor data
+### 2. Get sensor data
   
-	**For exercise A&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
+**For exercise A&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
 
-	![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
+![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
 
 
-	**For exercise C:** We won't use the backpack data in this exercise. We will use NTU VIRAL DATASET for the given exercise.
+**For exercise C:** We won't use the backpack data in this exercise. We will use NTU VIRAL DATASET for the given exercise.
 	First, download the data [nya_01 (Collected inside the Nanyang Auditorium)](https://researchdata.ntu.edu.sg/api/access/datafile/68144) from here or directly from the website, unzip 	it, and place it in the `slam-course/bagfiles` folder. You can download the rosbag via a Linux terminal with the following commands.
-	            
-		wget <bag zipfile URL>
-		unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
-		unzip nya_01 #To get the rosbag and related config files
-     
-	![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
+```	            
+wget <bag zipfile URL>
+unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
+unzip nya_01 #To get the rosbag and related config files
+```     
+![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
 
 
-4. Build the Docker Image [note: use sudo or make a docker group]
+### 4. Build the Docker Image [note: use sudo or make a docker group]
 Each group exercise has a separate docker file. For any given exercise, go to the respective folder, build the corresponding docker via the following commands,
-    #### For exercise A
-    ```
-    cd RPCN_PART_A
-    sudo docker build . -t rpcna  #rpcna is the docker image name for exercise A  
-    ```
-    #### For exercise B
-    ```
-    cd RPCN_PART_B
-    sudo docker build . -t rpcnb  #rpcnb is the docker image name for exercise B  
-    ```
-    #### For exercise C
-    ```
-    cd RPCN_PART_C
-    make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
-    ```
+#### For exercise A
+```
+cd RPCN_PART_A
+sudo docker build . -t rpcna  #rpcna is the docker image name for exercise A  
+```
+#### For exercise B
+```
+cd RPCN_PART_B
+sudo docker build . -t rpcnb  #rpcnb is the docker image name for exercise B  
+```
+#### For exercise C
+```
+cd RPCN_PART_C
+make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
+```
  
-3. Start the Docker container
+### 3. Start the Docker container
    
     While inside any exercise folder (e.g., RPCN_PART_A) 
      ```
@@ -170,7 +170,7 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 
 
 
-6. Cross-check if the environment is closed
+### 6. Cross-check if the environment is closed
 ```
 docker ps
 ```
