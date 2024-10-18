@@ -13,9 +13,9 @@ This course repository is designed to introduce students to the fundamentals of 
 **Groupwork A**: Pedestrian dead reckoning by IMU integration
 - Objective: With the help of this group work, students will learn about estimating a pedestrian’s movement by integrating data from an Inertial Measurement Unit (IMU). Students will learn to calculate position, velocity, and orientation by processing accelerometer and gyroscope data.
 - Key Concepts:
-  *  IMU calibration and data filtering **(integrated with ecercise A)
-  *  Handling sensor noise and drift
-  *  Dead reckoning with IMU
+  *  IMU calibration and data filtering (A1)
+  *  Handling sensor noise and drift (A2)
+  *  Dead reckoning with IMU (A2)
 - Practical Application: This exercise simulates pedestrian localization in an indoor environment (without GPS), which is crucial for applications in wearable technology and mobile robots.
 
 **Groupwork B**: 2D LIDAR SLAM with Cartographer
@@ -41,6 +41,7 @@ This course repository is designed to introduce students to the fundamentals of 
  * Docker 26.0.00 (expected to work with other versions as well)
  * MESA (`conda install -c conda-forge libglu` (if using conda) OR `sudo apt-get install libgl1-mesa-glx libgl1-mesa-dri` (if using sudo env)
  * MT Manager (For preferred OS, Refer this [link](https://www.movella.com/support/software-documentation))
+ * Python, MATLAB, or any other programming language with visualization packages
 
 Installing ROS is not necessary.
 
@@ -51,8 +52,14 @@ git clone https://github.com/your-username/slam-course.git
 cd slam-course
 ```
 ### 2. Get sensor data
+
+**For exercise A1:** The IMU data recording will be demonstrated in class. Basically, IMU will be connected the computer and MT Manager Interface will be used to record data.
+With MT Manager, the recorded data is automatically stored as a MT Binary Logfile (.mtb) file. It needs to be opened and exported to .txt (or any other prefered format) to be used with programming environment.
+The stored data (.txt) file will be utilized later by analyse_data.py program in `RPCN_PART_A1` folder
+
+![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
   
-**For exercise A&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
+**For exercise A2&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
 
 ![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
 
@@ -65,11 +72,15 @@ unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
 unzip nya_01 #To get the rosbag and related config files
 ```     
 ![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
+### 4. Compute the scale and Bias factor of IMU (for excercise A1 and A2)
+Modify the path in `analyse_data.py` code present in `RPCN_PART_A1` folder to load IMU stored data (.txt or any other format that has been saved) and compute average fup and Fdown.
+Afterwards, use equations to find bias and scale factor. Now, if you have bias and scale factor, utilize formulae given in lecture slides for accelerometer and angular rate errors.
+For more details, refer to the `Assignment.md` file in `RPCN_PART_A1` folder.
 
 
-### 4. Build the Docker Image [note: use sudo or make a docker group]
+### 5. Build the Docker Image [note: use sudo or make a docker group]
 Each group exercise has a separate docker file. For any given exercise, go to the respective folder, build the corresponding docker via the following commands,
-#### For exercise A
+#### For exercise A2
 ```
 cd RPCN_PART_A
 sudo docker build . -t rpcna  #rpcna is the docker image name for exercise A  
@@ -85,16 +96,16 @@ cd RPCN_PART_C
 make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
 ```
  
-### 3. Start the Docker container
+### 6. Start the Docker container
    
-    While inside any exercise folder (e.g., RPCN_PART_A) 
+    While inside any exercise folder (e.g., RPCN_PART_A2) 
      ```
      ./run_docker.sh 
      ```
      If you see the following outcome (or similar), you are successfully inside a docker container
      ![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
 
-   	#### For exercise A 
+   	#### For exercise A2 
 	a. Check if you have your datasets(.bag) in the container
 
 	           cd backpack/bagfiles/
@@ -177,7 +188,7 @@ make build  #rpcnc is the docker image name for exercise C  (Makefile builds the
 
 
 
-### 6. Cross-check if the environment is closed
+### 7. Cross-check if the environment is closed
 ```
 docker ps
 ```

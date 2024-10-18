@@ -1,0 +1,28 @@
+%YAML:1.0
+
+dataset_name: nya_01
+
+imu_topic: "/imu/imu"
+
+T_Body_Imu: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [ 1.0,  0.0,  0.0,  0.0,
+           0.0,  1.0,  0.0,  0.0,
+           0.0,  0.0,  1.0,  0.0,
+           0.0,  0.0,  0.0,  1.0 ]
+# ROS tf equivalence:
+# <node pkg="tf2_ros" type="static_transform_publisher"
+#       name="T_Body_IMU"
+#       args="0.0 0.0 0.0 0.0 0.0 0.0 Body IMU"/>
+
+# Standard deviation of the acceleration noise
+accel_std: 0.0365432018302
+# Standard deviation of the acceleration random walk noise
+accel_rw:  0.000433
+
+# Standard deviation of the angular velocity noise
+gyro_std: 0.00367396706572
+# Standard deviation of the angular velocity random walk noise
+gyro_std: 2.66e-05
