@@ -6,7 +6,7 @@ The objective of this practical is the rudimentary IMU calibration. We study acc
 
 ## Experiment
 The experiment shall be done together in the class as follows. Align the IMU in the way that one of its axes is aligned with gravity. Record the IMU acceleration and angular rate of this axis for a while, e.g. 1 min. This allows for averaging the acceleration and angular rate over time. 
-Then turn the IMU upside down in the way that the gravity is in the opposite direction. Record another time series and average the acceleration and angular rate. 
+Then turn the IMU upside down so that the gravity is in the opposite direction. Record another time series and average the acceleration and angular rate. 
 Repeat this procedure for two other axes (=up and down for all three axes).
 
 Now turn off and turn on the IMU and repeat the whole procedure multiple times. Keep a measurement notebook on how the experiment went.
