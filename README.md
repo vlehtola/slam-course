@@ -1,8 +1,3 @@
-git pull
-- breakdown the content exercise into a1 and a2
-- how to add bias and scale factor
-- verify by running it
-
 # Robotic perception SLAM course
 
 Ville Lehtola, University of Twente, v.v.lehtola@utwente.nl   
@@ -73,24 +68,28 @@ unzip nya_01 #To get the rosbag and related config files
 ```     
 ![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
 ### 4. Compute the scale and Bias factor of IMU (for excercise A1 and A2)
-Modify the path in `analyse_data.py` code present in `RPCN_PART_A1` folder to load IMU stored data (.txt or any other format that has been saved) and compute average fup and Fdown.
-Afterwards, use equations to find bias and scale factor. Now, if you have bias and scale factor, utilize formulae given in lecture slides for accelerometer and angular rate errors.
-For more details, refer to the `Assignment.md` file in `RPCN_PART_A1` folder.
+- Modify the path in the `analyse_data.py` code in the `RPCN_PART_A1` folder to load IMU stored data (.txt or any other format saved) and compute average F_up and F_down. Make any necessary changes based on the number of files or their format. Remember to use .txt imu data files in pairs (e.g., 1 with 2, 3 with 4; if alternate axes are saved similarly). Refer `Assignment.md` document for more details.
+- Now, the average values obtained from earlier activities will be used. Use the following equations to find bias and scale factors (You may have to neglect some terms).
+
+![Useful Equations](RPCN_PART_A1/eqs_imu_calib.PNG)
+
+- When you have bias and scale factors, utilize the formulae given in lecture slides for accelerometer and angular rate errors. For more details, refer to the `Assignment.md` file in `RPCN_PART_A1` folder.
 
 
 ### 5. Build the Docker Image [note: use sudo or make a docker group]
 Each group exercise has a separate docker file. For any given exercise, go to the respective folder, build the corresponding docker via the following commands,
-#### For exercise A2
+
+- #### For exercise A2
 ```
-cd RPCN_PART_A
+cd RPCN_PART_A2
 sudo docker build . -t rpcna  #rpcna is the docker image name for exercise A  
 ```
-#### For exercise B
+- #### For exercise B
 ```
 cd RPCN_PART_B
 sudo docker build . -t rpcnb  #rpcnb is the docker image name for exercise B  
 ```
-#### For exercise C
+- #### For exercise C
 ```
 cd RPCN_PART_C
 make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
@@ -98,76 +97,76 @@ make build  #rpcnc is the docker image name for exercise C  (Makefile builds the
  
 ### 6. Start the Docker container
    
-    While inside any exercise folder (e.g., RPCN_PART_A2) 
+While inside any exercise folder (e.g., RPCN_PART_A2) 
      ```
      ./run_docker.sh 
      ```
-     If you see the following outcome (or similar), you are successfully inside a docker container
-     ![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
+If you see the following outcome (or similar), you are successfully inside a docker container
+     
+![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
 
-   	#### For exercise A2 
+- #### For exercise A2 
 	a. Check if you have your datasets(.bag) in the container
-
-	           cd backpack/bagfiles/
-	           ls
+	
+		           cd backpack/bagfiles/
+		           ls
 
 	![image](https://github.com/user-attachments/assets/3d72a93c-0fec-4f36-b609-755480f0e8b3)
 	           
 	b. To playback rosbag, you need to source ROS with the following command and start ROS
 	   
-	          source /opt/ros/noetic/setup.bash
-	          roscore
+		source /opt/ros/noetic/setup.bash
+		roscore
 	
 	
 	**PS: You must source whenever you open a new terminal and connect it with docker**
 	           
 	c. Now open two new terminals and connect them to the running container as follows:
-	   
 	       	   
-	           docker ps
-	           xhost +local:docker
-	           docker exec -it <id> bash
+		docker ps
+		xhost +local:docker
+		docker exec -it <id> bash
 	           
 	![image](https://github.com/user-attachments/assets/626903ff-b364-4c63-b633-4077028c9afa)
 	
 	Note: `<id>` refers to the container ID shown beside the container name (e.g., here 572aa1996226)
 
-     
-	d. While in a newly open container terminal (one of two newly open terminals), go to `backpack/bagfiles/` and play one of the rosbags
 
-           cd backpack/bagfiles/
-           rosbag play <xx.bag> --clock
+  	d. While in a newly open container terminal (one of two newly open terminals), go to `backpack/bagfiles/` and play one of the rosbags
+
+		cd backpack/bagfiles/
+		rosbag play <xx.bag> --clock
    
 	e. Go to another newly open container terminal and look for rostopics as follows
 
-            rostopic list #Shows all the published rostopics
-            rostopic echo <topicname> #shows data of specific rostopic <topicname>
-            rostopic echo /imu/data > ascii_file.txt #Extract the topic data to a text file
-            rostopic echo /imu/acceleration | grep x > ascii_x_acc.txt #This saves only the x-axis acceleration data into the file
+		rostopic list #Shows all the published rostopics
+		rostopic echo <topicname> #shows data of specific rostopic <topicname>
+		rostopic echo /imu/data > ascii_file.txt #Extract the topic data to a text file
+		rostopic echo /imu/acceleration | grep x > ascii_x_acc.txt #This saves only the x-axis acceleration data into the file
 
 	f. Use the above commands to save IMU data; this will be used to interpolate a trajectory (See the assignment document for more description).
 
-     #### For exercise B
+- #### For exercise B
    	a. Check if you have your datasets(.bag) in the container
    
-	           cd backpack/bagfiles/
-	           ls
+		cd backpack/bagfiles/
+		ls
 
    
 	b. Now open two new terminals and connect them to the running container as follows:
 	   
 	       	   
-	           docker ps
-	           xhost +local:docker
-	           docker exec -it <id> bash
+		docker ps
+		xhost +local:docker
+		docker exec -it <id> bash
    
 	c. Go to the newly open container terminal, and run cartographer
             
-            source "/opt/ros/${ROS_DISTRO}/setup.bash"
-            cd /home/rpcn/catkin_ws
-            source "/opt/cartographer_ros/setup.bash"
-            source devel/setup.bash
-            roslaunch rpcn_part_b rpcn_part_b.launch bag_filename:=/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/{your_bag_file_name}
+		source "/opt/ros/${ROS_DISTRO}/setup.bash"
+		cd /home/rpcn/catkin_ws
+		source "/opt/cartographer_ros/setup.bash"
+		source devel/setup.bash
+		roslaunch rpcn_part_b rpcn_part_b.launch bag_filename:=/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/{your_bag_file_name}
 
 	d. You'll need to understand the cartographer's configuration to complete your assignment in the my_robot.lua file.
         Use your preferred text editor to view and edit the config file, which is placed inside the following location
@@ -176,7 +175,7 @@ make build  #rpcnc is the docker image name for exercise C  (Makefile builds the
 	e.  Edit the my_robot.lua file to enhance the performance of the cartographer SLAM algorithm.
    You'll need to discuss and plot results. (Please see the assignment document for more details.)
 
-     #### For exercise C
+- #### For exercise C
    
 	a. Visualize the ros topics in rviz window
 
