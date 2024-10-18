@@ -108,8 +108,8 @@ If you see the following outcome (or similar), you are successfully inside a doc
 - #### For exercise A2 
 	a. Check if you have your datasets(.bag) in the container
 	
-		           cd backpack/bagfiles/
-		           ls
+		cd backpack/bagfiles/
+		ls
 
 	![image](https://github.com/user-attachments/assets/3d72a93c-0fec-4f36-b609-755480f0e8b3)
 	           
