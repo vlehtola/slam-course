@@ -3,30 +3,27 @@
 Calculate a trajectory by integrating the IMU data over time. Perform the IMU integration in 2D and/or 3D. See README how to access the data through docker.
 
 ## Report
-Figure#1: Plot the 2D X-Y trajectory with the recorded data (that was stored in the form of .txt via running `rosbag`). 
+Figure#1: Plot the 2D X-Y trajectory with the IMU calibration from task A1. Integrate the trajectory from data that was extracted from `rosbag`. 
 
-Figure#2: Plot the 2D X-Y trajectory with the refined recorded data (that was biased and scale-corrected)
+Figure#2: Plot the 2D X-Y trajectory without IMU calibration, for comparison purposes. 
+
+Discuss: Is the result better with calibration? 
+According to the calibrated data, did the IMU arrive in the same place from where it started? Estimate the magnitude of drift. In other words, measure the Cartesian distance between the start and end points of the trajectory. To what extent did the calibration remove the drift? If there is still drift, why?
 
 **Note:** Pay attention to the plotting scale so that the labels of the axes are properly shown.
 
-Discuss: 
-According to the data, did the IMU arrive in the same place from where it started? Estimate the magnitude of drift. If there is drift, why?
+**Note:** Remember to calibrate the IMU data first with the bias and scale factor values obtained from `exercise#A1` before plotting Figure#2. Re-mention these values briefly. 
 
-**Note:** Remember to calibrate the IMU data first with the bias and scale factor values obtained from `exercise#A1` before plotting Figure#2. Mention these values if they have not been mentioned before. To what extent did the calibration remove the drift?
+Steps: 
 
+Part A2
+1. Run the rosbag inside the given docker container, and store rosbag imu data in .txt or any other preferable format for easier access.
+2. Calibration: eliminate known imu bias and scale factor errors using the result from `exercise#A1`
+3. Mechanization: integrate to obtain the orientation, velocity, and position with respect to time. Express the positions in the first time frame to obtain the trajectory.
+4. Plot the trajectory.
+5. Compare results by integrating without calibration.
+6. Discuss.
 
-(what kindof trajectory needs to be plotted? How integrate imu calib parameters?)
+## CBL
 
-Integrate IMU calib folder with rpcn A exercise...
-Steps:
-Part 1a
-1. Record the IMU data with MT Manager 2.0 in class
-2. Open and store in .txt file
-3. Utilize data_analyse python file to get average imu values
-4. estimate scale factor and bias via equations
-Part 2b
-1. run rosbag and store rosbag imu data in .txt or any other preferable format.
-2. plot the results
-3. integrate imu bias and scale factor to store data using data_analysis.py
-4. plot the results
-5. compare results
+See description in `exercise#A1`.
