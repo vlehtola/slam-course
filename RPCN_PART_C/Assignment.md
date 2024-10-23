@@ -1,13 +1,13 @@
 
 Use this assignment to refine your analytical and innovative thinking by exploring A-LOAM with NTU VIRAL Dataset and suggesting improvements
 
-# NTU-VIRAL DATASET with A-LOAM
+# Multi-Sensor Data Fusion using A-LOAM
 
 In this assignment, students will:
 
  - Map and analyze key components from the A-LOAM paper to the A-LOAM codebase provided.
  - Perform a feasibility study and evaluate the impact of low-cost sensing to the map quality and algorithm robustness.
- - Get hands-on experience with multi-line 3D lidar data and working with an open SLAM dataset (NTU VIRAL).
+ - Get hands-on experience with multi-line 3D lidar data and working with an open SLAM dataset (NTU VIRAL dataset).
 
 ## Task 1: Mapping Key Components of the Paper to the Codebase
 **Objective:** Identify and map specific components of algorithms discussed in the LOAM paper to corresponding functions or files in the provided A-LOAM codebase. A-LOAM is an Advanced implementation of LOAM (J. Zhang and S. Singh. LOAM: Lidar Odometry and Mapping in Real-time). A-LOAM is intended as good learning material for SLAM beginners.
