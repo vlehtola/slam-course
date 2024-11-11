@@ -47,7 +47,7 @@ Installing ROS is not necessary.
 ## Setup Instructions
 ### 1. Clone the Repository
 ```
-git clone https://github.com/your-username/slam-course.git
+git clone --recurse-submodules https://github.com/vlehtola/slam-course.git
 cd slam-course
 ```
 ### 2. Get sensor data
@@ -58,7 +58,7 @@ The stored data (.txt) file will be utilized later by analyse_data.py program in
 
 ![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
   
-**For exercise A2&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder 	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
+**For exercise A2&B:** Download the `rosbag` files (sensor data) from [here](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) or use your own collected rosbag. Place these inside the slam-course folder	named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the 	`path` to bag files would need to be readjusted)
 
 ![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
 
@@ -120,7 +120,7 @@ If you see the following outcome (or similar), you are successfully inside a doc
 	b. To playback rosbag, you need to source ROS with the following command and start ROS
 	   
 		source /opt/ros/noetic/setup.bash
-		roscore
+		roscore #May not be necessary if roscore or any other ros package is running
 	
 	
 	**PS: You must source whenever you open a new terminal and connect it with docker**
