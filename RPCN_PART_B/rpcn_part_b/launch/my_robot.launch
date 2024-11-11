@@ -16,7 +16,7 @@
 
 <launch>
   <param name="robot_description"
-    textfile="$(find rpcn_part_b)/urdf/calib_v1.urdf" />
+    textfile="$(find rpcn_part_b)/urdf/calib.urdf" />
 
   <node name="robot_state_publisher" pkg="robot_state_publisher"
     type="robot_state_publisher" />

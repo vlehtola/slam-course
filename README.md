@@ -1,34 +1,38 @@
 # Robotic perception SLAM course
 
 Ville Lehtola, University of Twente, v.v.lehtola@utwente.nl   
-2022-2024
+2022-2024    
+Credits to M. Affan and B. Ugudama.
 
 This course repository is designed to introduce students to the fundamentals of SLAM (Simultaneous Localization and Mapping) through hands-on exercises. The course takes students from basic sensor integration to practical SLAM applications using modular exercises.
 
-**Groupwork A**: Pedestrian dead reckoning by IMU integration
-- Objective: With the help of this group work, students will learn about estimating a pedestrian’s movement by integrating data from an Inertial Measurement Unit (IMU). Students will learn to calculate position, velocity, and orientation by processing accelerometer and gyroscope data.
+**Groupwork A**: Dead reckoning by IMU integration
+- Objective: With the help of this group work, students will learn about estimating the movement of a perception head (here: a pedestrian) by integrating data that they have captured from an Inertial Measurement Unit (IMU). Students will learn about Euler angles and coordinate transformations, and to calculate position, velocity, and orientation by processing accelerometer and gyroscope data.
 - Key Concepts:
   *  IMU calibration and data filtering (A1)
-  *  Handling sensor noise and drift (A2)
+  *  Dealing with sensor noise and drift (A2)
+  *  Coordinate transformations, including Euler angles, derivative of the rotation matrix, homogeneous coordinates (A2)
   *  Dead reckoning with IMU (A2)
-- Practical Application: This exercise simulates pedestrian localization in an indoor environment (without GPS), which is crucial for applications in wearable technology and mobile robots.
+  
+  Practical Application: An IMU can always be used, regardless of the application or the environment (urban, rural, underwater, airborne, space), and is therefore a valuable sensor. This exercise is about pedestrian localization in an indoor environment (without GPS), which is crucial for applications in wearable technology and mobile robots. CBL students will relate this task to their robot design.
 
-**Groupwork B**: 2D LIDAR SLAM with Cartographer
-- Objective: Students will implement a basic SLAM system using Cartographer, an open-source SLAM framework, and a 2D Hokuyo LIDAR sensor. The exercise focuses on building 2D maps of indoor environments by processing LIDAR scans.
+**Groupwork B**: 2D LIDAR-inertial SLAM with Cartographer
+- Objective: Students will capture data with a 2D Hokuyo LIDAR sensor and implement a basic SLAM system using Cartographer, an open-source SLAM framework. The exercise focuses on building 2D maps of indoor environments by processing LIDAR scans.
 - Key Concepts:
-  * LIDAR sensor data processing
+  * Lidar 2D scan matching
   * Pose estimation and map building
-  * SLAM with Cartographer
+  * Local SLAM (=odometry) vs. global SLAM (=graphSLAM)
+  * 2D Lidar-inertial SLAM with Cartographer
 - Practical Application: This exercise allows building a 2D map of an indoor environment, which is useful in mobile robot navigation, autonomous vehicles, and drones.
 
-**Groupwork C**: Coordinate Transformations and Multi-Sensor Data Fusion using A-LOAM 
-- Objective: This exercise covers relatively advanced SLAM concepts, specifically registering data from multiple LIDAR sensors and performing coordinate transformations. Students will explore multi-sensor fusion and transform sensor data into a unified coordinate system.
+**Groupwork C**: Multi-Sensor Data Fusion using A-LOAM 
+- Objective: This exercise covers relatively advanced SLAM concepts, specifically registering data from two multi-line LIDAR sensors and performing advanced coordinate transformations. Students will explore cooperative sensor fusion and transform sensor data into a unified coordinate system.
 - Key Concepts:
-  * Coordinate transformations (Euler angles, quaternions)
-  * Multi-sensor fusion for improved map accuracy
+  * Cooperative sensor fusion for improved 3D map accuracy
+  * Low level fusion vs. high level fusion
   * Registering and aligning data from different sensors
-  * Improving existing methods
-- Practical Application: This exercise extends earlier SLAM implementation to multiple sensors, often common in autonomous driving, 3D mapping, and robot localization.
+  * Handling big data from 3D multi-line lidars
+- Practical Application: This exercise extends earlier SLAM implementation to multiple sensors, common in autonomous driving, drone exploration, 3D mapping, and robot localization.
 
 ## Prerequisite
  The following course repositories are recommended to run inside docker. With the help of docker, a pre-configured environment could be run without installing individual software dependencies, simplifying the overall process. The exercises are tested with the following versions:
