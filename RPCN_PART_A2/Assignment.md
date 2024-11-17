@@ -3,6 +3,9 @@
 Calculate a trajectory by integrating the IMU data over time. Perform the IMU integration in 2D and/or 3D. See README how to access the data through docker.
 
 ## Report
+
+The report has a page limit of 3 pages and it must contain:
+
 Figure#1: Plot the 2D X-Y trajectory with the IMU calibration from task A1. Integrate the trajectory from data that was extracted from `rosbag`. 
 
 Figure#2: Plot the 2D X-Y trajectory without IMU calibration, for comparison purposes. 
