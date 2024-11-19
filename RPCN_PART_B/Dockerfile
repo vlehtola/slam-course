@@ -72,5 +72,5 @@ COPY part_b_config.sh /
 COPY rpcn_part_b /rpcn_part_b
 #Note: do not copy bagfiles, mount the directory instead to docker when running the image
 RUN chmod +x /part_b_config.sh
-RUN  /part_b_config.sh
+RUN  bash /part_b_config.sh
 WORKDIR /home/rpcn
