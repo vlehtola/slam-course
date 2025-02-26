@@ -189,6 +189,9 @@ If you see the following outcome (or similar), you are successfully inside a doc
 
 	d. Refer to the assignment section for more details
 
+TO DO:
+	1. Add an evaluation scheme for assignment 3. That is, comparison of detoriated trajectory with the reference benchmarked provided by the NTUVIRAL dataset
+
 
 
 ### 7. Cross-check if the environment is closed
