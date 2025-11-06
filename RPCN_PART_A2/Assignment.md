@@ -22,10 +22,11 @@ Steps:
 Part A2
 1. Run the rosbag inside the given docker container, and store rosbag imu data in .txt or any other preferable format for easier access.
 2. Calibration: eliminate known imu bias and scale factor errors using the result from `exercise#A1`
-3. Mechanization: integrate to obtain the orientation, velocity, and position with respect to time. Express the positions in the first time frame to obtain the trajectory.
-4. Plot the trajectory.
-5. Compare results by integrating without calibration.
-6. Discuss.
+3. Pre-mechanization (Optional, but recommended): Perform a basic sanity check by implementing constant/dummy velocity trajectory integration to validate integaration pipeline
+4. Mechanization: integrate to obtain the orientation, velocity, and position with respect to time. Express the positions in the first time frame to obtain the trajectory.
+5. Plot the trajectory.
+6. Compare results by integrating without calibration.
+7. Discuss.
 
 ## CBL
 
