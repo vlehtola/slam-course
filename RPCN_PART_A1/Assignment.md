@@ -37,7 +37,7 @@ Steps:
 Part A1
 1. Record the IMU data with MT Manager 2.0 in class
 2. Open and store in .txt file
-3. Utilize e.g. data_analyse python file to get average values for the specific force, f_up and f_down
+3. Utilize e.g. a python code to get average values for the specific force, f_up and f_down
 4. Estimate scale factor and bias via equations
 5. Report obtained values in Table 1 and Table 2(*) and discuss them.
 
