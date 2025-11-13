@@ -22,6 +22,11 @@ RUN CARTOGRAPHER_SHA=$CARTOGRAPHER_SHA \
     CARTOGRAPHER_VERSION=$CARTOGRAPHER_VERSION \
     cartographer_ros/scripts/prepare_catkin_workspace.sh && \
     sed -i -e "s%<depend>libabsl-dev</depend>%<\!--<depend>libabsl-dev</depend>-->%g" catkin_ws/src/cartographer/package.xml
+    
+# Install tf2_eigen
+RUN apt-get update && apt-get install -y \
+    ros-noetic-tf2-eigen \
+    ros-noetic-pcl-conversions
 
 # rosdep needs the updated package.xml files to install the correct debs.
 COPY cartographer_ros/cartographer_ros/package.xml catkin_ws/src/cartographer_ros/cartographer_ros/

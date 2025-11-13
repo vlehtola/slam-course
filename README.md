@@ -57,7 +57,7 @@ With MT Manager, the recorded data is automatically stored as a MT Binary Logfil
 The stored data (.txt) file will be utilized later by analyse_data.py program in `RPCN_PART_A1` folder
 
 ![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
-  
+
 **For exercises A2 & B:** Download the `rosbag` files (sensor data) from [here (these are available once you have captured the data)](https://surfdrive.surf.nl/files/index.php/s/cKCFQRLSTa5dfBF) and place these inside the slam-course folder named `bagfiles`. The downloaded bag files could be organized inside in a slam-course folder as shown below (it is completely fine to organize differently as well, but then the `path` to bag files would need to be readjusted)
 
 ![image](https://github.com/user-attachments/assets/da64c136-003a-4d76-a56f-78abcb296405)
@@ -69,7 +69,7 @@ The stored data (.txt) file will be utilized later by analyse_data.py program in
 wget <bag zipfile URL>
 unzip <downloaded bag zipfile #(e.g., 68144> -d <bagfile folder>)
 unzip nya_01 #To get the rosbag and related config files
-```     
+```
 ![image](https://github.com/user-attachments/assets/7fcdfa35-a7a8-4142-9c4c-4249ba577276)
 ### 4. Compute the scale and Bias factor of IMU (for excercise A1 and A2)
 - Modify the path in the `analyse_data.py` code in the `RPCN_PART_A1` folder to load IMU stored data (.txt or any other format saved) and compute average F_up and F_down. Make any necessary changes based on the number of files or their format. Remember to use .txt imu data files in pairs (e.g., 1 with 2, 3 with 4; if alternate axes are saved similarly). Refer `Assignment.md` document for more details.
@@ -96,18 +96,22 @@ sudo docker build . -t rpcnb  #rpcnb is the docker image name for exercise B
 - #### For exercise C
 ```
 cd RPCN_PART_C
-make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
+sudo make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
 ```
- 
+
 ### 6. Start the Docker container
-   
-While inside any exercise folder (e.g., RPCN_PART_A2) 
+
+While inside any exercise folder (e.g., RPCN_PART_A2) ,Docker requires root user or membership in the docker group, so please use
      ```
-     ./run_docker.sh 
+     sudo ./run_docker.sh 
      ```
 If you see the following outcome (or similar), you are successfully inside a docker container
      
 ![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
+
+When checking whether the bagfile is inside the container, if the container does not contain the bag, you can copy it into the container using the following command (**assignment_part_b** is the name of your container. You can check your container name by running **sudo docker ps -a**):
+
+`sudo docker cp your_bagfile.bag assignment_part_b:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/`
 
 - #### For exercise A2 
 	a. Check if you have your datasets(.bag) in the container
@@ -118,7 +122,7 @@ If you see the following outcome (or similar), you are successfully inside a doc
 	![image](https://github.com/user-attachments/assets/3d72a93c-0fec-4f36-b609-755480f0e8b3)
 	           
 	b. To playback rosbag, you need to source ROS with the following command and start ROS
-	   
+	
 		source /opt/ros/noetic/setup.bash
 		roscore 	#May not be necessary e.g. if roscore or any other ros package is running
 	
@@ -130,36 +134,36 @@ If you see the following outcome (or similar), you are successfully inside a doc
 		docker ps
 		xhost +local:docker
 		docker exec -it <id> bash
-	           
+	
 	![image](https://github.com/user-attachments/assets/626903ff-b364-4c63-b633-4077028c9afa)
 	
 	Note: `<id>` refers to the container ID shown beside the container name (e.g., here 572aa1996226)
 
 
   	d. While in a newly open container terminal (one of two newly open terminals), go to `backpack/bagfiles/` and play one of the rosbags
-
-		cd backpack/bagfiles/
-		rosbag play <xx.bag> --clock
-   
-	e. Go to another newly open container terminal and look for rostopics as follows
-
-		rostopic list #Shows all the published rostopics
-		rostopic echo <topicname> #shows data of specific rostopic <topicname>
-		rostopic echo /imu/data > ascii_file.txt #Extract the topic data to a text file
-		rostopic echo /imu/acceleration | grep x > ascii_x_acc.txt #This saves only the x-axis acceleration data into the file
-
-	f. Use the above commands to save IMU data; this will be used to interpolate a trajectory (See the assignment document for more description).
+  	
+  		cd backpack/bagfiles/
+  		rosbag play <xx.bag> --clock
+  	   
+  	e. Go to another newly open container terminal and look for rostopics as follows
+  	
+  		rostopic list #Shows all the published rostopics
+  		rostopic echo <topicname> #shows data of specific rostopic <topicname>
+  		rostopic echo /imu/data > ascii_file.txt #Extract the topic data to a text file
+  		rostopic echo /imu/acceleration | grep x > ascii_x_acc.txt #This saves only the x-axis acceleration data into the file
+  	
+  	f. Use the above commands to save IMU data; this will be used to interpolate a trajectory (See the assignment document for more description).
 
 - #### For exercise B
    	a. Check if you have your datasets(.bag) in the container
-   
+   	
 		cd backpack/bagfiles/
 		ls
 
    
 	b. Now open two new terminals and connect them to the running container as follows:
-	   
-	       	   
+	
+	
 		docker ps
 		xhost +local:docker
 		docker exec -it <id> bash
@@ -180,17 +184,27 @@ If you see the following outcome (or similar), you are successfully inside a doc
    You'll need to discuss and plot results. (Please see the assignment document for more details.)
 
 - #### For exercise C
-   
-	a. Visualize the ros topics in rviz window
-
-	b. If you wish to directly interact with rostopics, go to the separate terminal and link it with `rpcnc` running container via `docker exec -it <id> bash`
-
-	c. Exit the container when finished, and write `make clean` while inside folder `RPCN_PART_C` to delete the container
-
-	d. Refer to the assignment section for more details
-
-TO DO:
-	1. Add an evaluation scheme for assignment 3. That is, comparison of detoriated trajectory with the reference benchmarked provided by the NTUVIRAL dataset
+  
+	1. Download the **nya01** sequence of the **NTU-VIRAL dataset**:
+	    https://ntu-aris.github.io/ntu_viral_dataset/
+	
+	    Save the downloaded `nya_01.bag` file into the folder
+	     `../slam-course/RPCN_PART_C/bagfiles/nya_01/`.
+	
+	2. In the `slam-course/RPCN_PART_C` folder, open a terminal and run:
+	    `sudo ./run_docker.sh`
+	
+	3. The Pose results will be saved to `../slam-course/RPCN_PART_C/results/nya_01/opt_odom_horz.csv`.
+	
+	4. Evaluation:
+	    - Download the ground truth Pose data for the corresponding sequence from the **NTU-VIRAL dataset** (https://github.com/ntu-aris/ntuviral_gt) 
+	    - During accuracy evaluation, our goal is to assess the difference between the SLAM-estimated poses and the ground truth. Since the ground truth system and the SLAM system use different reference coordinate frames, it is necessary to align the two trajectories before evaluation. A common approach is to find a rigid transformation that minimizes the root-mean-square error (RMSE) between the two trajectories.
+	    - Next, please consider selecting appropriate metrics for both quantitative and qualitative evaluation. Present the evaluation results in the form of figures and tables.
+	
+	5. Notes:
+	   - Visualize the ros topics in rviz window
+	   - If you wish to directly interact with rostopics, go to the separate terminal and link it with `rpcnc` running container via `docker exec -it <id> bash`
+	   - Refer to the assignment section for more details
 
 
 
