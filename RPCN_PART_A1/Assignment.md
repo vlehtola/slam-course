@@ -19,7 +19,7 @@ Then go to the MT Manager folder and open and read MT Manager documentation.
 
 Calculate bias and scale factor error for acceleration and angular rate from the following equations introduced at the lecture, for each axis 
 
-![IMU calibration equations](https://github.com/vlehtola/slam-course/blob/main/IMU_calibration/eqs_imu_calib.PNG "Equations")
+![IMU calibration equations](https://github.com/vlehtola/slam-course/blob/main/RPCN_PART_A1/eqs_imu_calib.PNG "Equations")
 
 
 ## Report
