@@ -38,7 +38,7 @@ This course repository is designed to introduce students to the fundamentals of 
  The following course repositories are recommended to run inside docker. With the help of docker, a pre-configured environment could be run without installing individual software dependencies, simplifying the overall process. The exercises are tested with the following versions:
  * Ubuntu Linux 20.04 (expected to work with Ubuntu Linux 22.04)
  * Docker 26.0.00 (expected to work with other versions as well)
- * MESA (`conda install -c conda-forge libglu` (if using conda) OR `sudo apt-get install libgl1-mesa-glx libgl1-mesa-dri` (if using sudo env)
+ * MESA (`conda install -c conda-forge libglu` (if using conda) OR ` apt-get install libgl1-mesa-glx libgl1-mesa-dri` (if using sudo env)
  * MT Manager (For preferred OS, Refer this [link](https://www.movella.com/support/software-documentation))
  * Python, MATLAB, or any other programming language with visualization packages
 
@@ -86,32 +86,32 @@ Each group exercise has a separate docker file. For any given exercise, go to th
 - #### For exercise A2
 ```
 cd RPCN_PART_A2
-sudo docker build . -t rpcna  #rpcna is the docker image name for exercise A  
+docker build . -t rpcna  #rpcna is the docker image name for exercise A  
 ```
 - #### For exercise B
 ```
 cd RPCN_PART_B
-sudo docker build . -t rpcnb  #rpcnb is the docker image name for exercise B  
+docker build . -t rpcnb  #rpcnb is the docker image name for exercise B  
 ```
 - #### For exercise C
 ```
 cd RPCN_PART_C
-sudo make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
+make build  #rpcnc is the docker image name for exercise C  (Makefile builds the container here)
 ```
 
 ### 6. Start the Docker container
 
 While inside any exercise folder (e.g., RPCN_PART_A2) ,Docker requires root user or membership in the docker group, so please use
      ```
-     sudo ./run_docker.sh 
+     ./run_docker.sh 
      ```
 If you see the following outcome (or similar), you are successfully inside a docker container
      
 ![image](https://github.com/user-attachments/assets/04e55f15-0ebe-473f-939c-340f6beb8a4b)
 
-When checking whether the bagfile is inside the container, if the container does not contain the bag, you can copy it into the container using the following command (**assignment_part_b** is the name of your container. You can check your container name by running **sudo docker ps -a**):
+When checking whether the bagfile is inside the container, if the container does not contain the bag, you can copy it into the container using the following command (**assignment_part_b** is the name of your container. You can check your container name by running **docker ps -a**):
 
-`sudo docker cp your_bagfile.bag assignment_part_b:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/`
+`docker cp your_bagfile.bag assignment_part_b:/home/rpcn/catkin_ws/src/rpcn_part_b/bagfiles/`
 
 - #### For exercise A2 
 	a. Check if you have your datasets(.bag) in the container
@@ -192,7 +192,7 @@ When checking whether the bagfile is inside the container, if the container does
 	     `../slam-course/RPCN_PART_C/bagfiles/nya_01/`.
 	
 	2. In the `slam-course/RPCN_PART_C` folder, open a terminal and run:
-	    `sudo ./run_docker.sh`
+	    `./run_docker.sh`
 	
 	3. The Pose results will be saved to `../slam-course/RPCN_PART_C/results/nya_01/opt_odom_horz.csv`.
 	
