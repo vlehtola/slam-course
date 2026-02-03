@@ -27,6 +27,7 @@ Discuss the results briefly. Why is the drift different? Were there any fast rot
 
 ## PPD - Assignment B: Environmental Perception
 
+This section concerns only MROB students.
 Note: The following questions guide your thinking. If a technology (LiDAR, cameras, etc.) 
 is not applicable to your robot design, state this explicitly and justify why alternative 
 approaches are sufficient. You will be graded on engineering reasoning, not on using 
