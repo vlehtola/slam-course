@@ -27,6 +27,6 @@ Part A2
 5. Compare results by integrating without calibration.
 6. Discuss.
 
-## CBL
+## PPD
 
-See description in `exercise#A1`.
+This section concerns only MROB students (with ASAI or HSAI specialization). No additional requirements beyond `exercise#A1`.
