@@ -58,7 +58,7 @@ The **page limit for the report is 3 pages**, and it must contain the following:
 
 ## PPD - Assignment C: Sensor Integration Architecture
 
-Note: You will be graded on engineering reasoning and appropriateness of your sensor 
+This section concerns only MROB students. Note: You will be graded on engineering reasoning and appropriateness of your sensor 
 architecture. Both single-sensor and multi-sensor systems can be correct choices 
 depending on your requirements.
 
