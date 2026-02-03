@@ -42,14 +42,14 @@ Part A1
 5. Report obtained values in Table 1 and Table 2(*) and discuss them.
 
 
-## CBL
+## PPD
 
 This section concerns only MROB students with ASAI or HSAI specialization.
 
 IMU(s) can be used in any environment, so we expect that these are considered for your CBL system. Instead of (*), i.e. calculating run-to-run bias and scale factor instability, include the following into your CBL report (=not to `exercise#A1` report):
 
-*  How can one or multiple IMUs benefit your CBL robot design, and how should they be placed?
-*  What should be the quality of the IMU(s) in terms of accelerometer and gyroscope drift?
-*  Briefly describe methodology is used to calibrate the IMU(s), with respect to e.g. the biases
+* If applicable, explain whether your robot requires inertial sensing and justify this choice.
+* If an IMU is used (or multiple IMUs), describe placement, quality requirements, and calibration methodology.
+* If not required, explain why alternative sensors are sufficient.
 
 These CBL report points may be written after the design of the system has been agreed upon within the group. The base idea should be there at the 2/3 mandatory Q&A session.
