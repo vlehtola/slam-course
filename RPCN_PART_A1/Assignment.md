@@ -44,7 +44,7 @@ Part A1
 
 ## PPD
 
-This section concerns only MROB students with ASAI or HSAI specialization. Note: The following questions are designed to guide your thinking. If a technology (IMU, LiDAR, etc.) is not applicable to your robot design (applies to A,B,C), state this explicitly and justify why alternative approaches are sufficient. You will be graded on engineering reasoning, not on using specific sensors.  Both using and not using a particular sensor can be correct choices depending on your system requirements.
+This section concerns only MROB students (especially with ASAI or HSAI specialization). Note: The following questions are designed to guide your thinking. If a technology (IMU, LiDAR, etc.) is not applicable to your robot design (applies to A,B,C), state this explicitly and justify why alternative approaches are sufficient. You will be graded on engineering reasoning, not on using specific sensors.  Both using and not using a particular sensor can be correct choices depending on your system requirements.
 
 Instead of (*), i.e. calculating run-to-run bias and scale factor instability, include the following into your CBL report (=not to `exercise#A1` report):
 
