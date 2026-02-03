@@ -56,12 +56,31 @@ The **page limit for the report is 3 pages**, and it must contain the following:
  2. Two values for the maximum range of the lidar **R**, with two snapshots from rviz showing the method working and not working. (Hint: visualize and annotate scan match errors in registered point clouds)
  3. Discuss briefly which part(s) of the algorithm fail first when **R** is low (*).
 
-## CBL
+## PPD - Assignment C: Sensor Integration Architecture
 
-This section concerns only MROB students with ASAI or HSAI specialization.
+Note: You will be graded on engineering reasoning and appropriateness of your sensor 
+architecture. Both single-sensor and multi-sensor systems can be correct choices 
+depending on your requirements.
 
-Instead of (*), include the following into your CBL report:
+Include in your CBL report:
 
-- Select and name a sensor fusion strategy (complementary, competitive, and cooperative) and provide valid arguments how this strategy benefits the design of your CBL system.
-- See the CBL rubric to fulfil the remaining tasks.
+* Describe your overall sensing architecture (single sensor, multiple independent 
+  sensors, or fused sensors)
+
+* **If using sensor fusion:** Name your fusion strategy (complementary, competitive, 
+  cooperative, or hybrid), explain the fusion mechanism, describe coordinate frame 
+  transformations, and justify why fusion improves your system over single sensors
+
+* **If using multiple independent sensors:** Explain what each sensor provides, why 
+  fusion is not necessary, and how your system ensures safety/reliability
+
+* **If using a single primary sensor:** Justify why this is sufficient, explain 
+  failure modes and mitigation strategies, and discuss whether your accuracy/reliability 
+  requirements could be met with simpler/cheaper sensors
+
+* Coordinate systems: Describe frames and transformations used
+
+See the PPD grading rubric (course intro slides, slide 12) for detailed assessment 
+criteria. The rubric applies to the report as a whole and emphasizes engineering 
+reasoning over sensor system complexity.
 
