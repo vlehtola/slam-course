@@ -44,12 +44,13 @@ Part A1
 
 ## PPD
 
-This section concerns only MROB students with ASAI or HSAI specialization.
+This section concerns only MROB students with ASAI or HSAI specialization. Note: The following questions are designed to guide your thinking. If a technology (IMU, LiDAR, etc.) is not applicable to your robot design (applies to A,B,C), state this explicitly and justify why alternative approaches are sufficient. You will be graded on engineering reasoning, not on using specific sensors.  Both using and not using a particular sensor can be correct choices depending on your system requirements.
 
-IMU(s) can be used in any environment, so we expect that these are considered for your CBL system. Instead of (*), i.e. calculating run-to-run bias and scale factor instability, include the following into your CBL report (=not to `exercise#A1` report):
+Instead of (*), i.e. calculating run-to-run bias and scale factor instability, include the following into your CBL report (=not to `exercise#A1` report):
 
-* If applicable, explain whether your robot requires inertial sensing and justify this choice.
-* If an IMU is used (or multiple IMUs), describe placement, quality requirements, and calibration methodology.
-* If not required, explain why alternative sensors are sufficient.
+* Identify your robot's localization and motion sensing requirements (accuracy, environment, dynamics)
+* Justify your chosen sensor approach
+* If using IMU(s): Describe number/placement, quality requirements (drift, noise), and calibration methodology
+* If not using IMU(s): Explain your chosen sensors (wheel encoders, LiDAR, GNSS, visual odometry, etc. explained later in the course), how these meet your requirements, and what tradeoffs you considered
 
-These CBL report points may be written after the design of the system has been agreed upon within the group. The base idea should be there at the 2/3 mandatory Q&A session.
+These PPD report points may be written after the cognition challenge and the design of the system has been agreed upon within the group. The base idea should be there at the 2/3 mandatory Q&A session.
