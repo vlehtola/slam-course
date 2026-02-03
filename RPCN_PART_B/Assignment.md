@@ -25,12 +25,32 @@ Figure 2(*): Plot the following trajectories in one figure:
 
 Discuss the results briefly. Why is the drift different? Were there any fast rotations? If yes, how does it show? If not, what would have happened if there were?
 
-## CBL
+## PPD - Assignment B: Environmental Perception
 
-This section concerns only MROB students with ASAI or HSAI specialization.
+Note: The following questions guide your thinking. If a technology (LiDAR, cameras, etc.) 
+is not applicable to your robot design, state this explicitly and justify why alternative 
+approaches are sufficient. You will be graded on engineering reasoning, not on using 
+specific sensors. Both using and not using a particular sensor can be correct choices 
+depending on your system requirements.
 
-The benefit of lidar(s) depends on the environment, and the task at hand. Consider their applicability (and that of the cameras!) to your CBL system. Instead of (*), i.e. Figure 2 and the related discussion, include the following into your CBL report (=not to `exercise#B` report):
+Instead of the groupwork exercise (*), include the following in your CBL report 
+(=not in `exercise#B` report):
 
-*  How can one or multiple lidars/cameras benefit your CBL robot design, and how should they be placed?
-*  What should be the quality of these sensors in terms of error and noise? Will these be low-cost? Briefly consider also the energy usage.
-*  Briefly describe the methodology which would be used to calibrate these sensors.
+* Identify your robot's environmental perception requirements (obstacle detection, 
+  semantic understanding, operating conditions: lighting, weather, occlusions)
+  
+* Justify your chosen perception approach
+
+* **If using LiDAR:** Describe type (2D/3D, mechanical/solid-state), placement, 
+  quality requirements (range, accuracy, angular resolution), and calibration methodology
+
+* **If using camera(s):** Describe type (mono/stereo, RGB/depth, thermal), placement, 
+  quality requirements (resolution, frame rate, lighting sensitivity), and calibration 
+  methodology (intrinsic/extrinsic)
+
+* **If not using LiDAR or cameras:** Explain your chosen sensors (ultrasonic, IR 
+  proximity, tactile, structured light, etc.), how these meet your requirements, and 
+  what tradeoffs you considered
+
+These PPD report points may be written after the cognition challenge and the design of the system has been agreed upon within the group.  
+The base idea should be there at the 2/3 mandatory Q&A session.
