@@ -4,7 +4,8 @@ Ville Lehtola, University of Twente, v.v.lehtola@utwente.nl
 2022-2024    
 Credits to M. Affan and B. Ugudama.
 
-This course repository is designed to introduce students to the fundamentals of SLAM (Simultaneous Localization and Mapping) through hands-on exercises. The course takes students from basic sensor integration to practical SLAM applications using modular exercises.
+This course repository is designed to introduce students to the fundamentals of SLAM (Simultaneous Localization and Mapping) through hands-on exercises. The course takes students from basic sensor integration to practical SLAM applications using modular exercises. The assignment exposes you to real robotics software and data, rather than simplified teaching examples. The systems are implemented using ROS and distributed through Docker, which are widely used in robotics research and industry. You will work with real SLAM implementations such as Google Cartographer and A-LOAM, which are a few years old but remain highly instructive. Importantly, modern robot perception, cognition, and navigation algorithms are built on the same core principles implemented in these systems, such as state estimation, scan registration, mapping, and sensor fusion. Docker is used to ensure that the software and datasets run reliably across different computers with minimal setup issues, while allowing you to work with real sensor data and realistic robotics pipelines aligned with the learning objectives of the course.
+
 
 **Groupwork A**: Dead reckoning by IMU integration
 - Objective: With the help of this group work, students will learn about estimating the movement of a perception head (here: a pedestrian) by integrating data that they have captured from an Inertial Measurement Unit (IMU). Students will learn about Euler angles and coordinate transformations, and to calculate position, velocity, and orientation by processing accelerometer and gyroscope data.
